@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scalia — Meta Ads for Local Service Businesses</title>
+<meta name="description" content="Scalia runs Facebook & Instagram ads that fill your calendar with qualified leads. Built for detailers, roofers, HVAC techs, landscapers & more.">
+<link rel="canonical" href="https://scaliagrowth.com/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="theme-color" content="#4facfe">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Scalia">
+<meta property="og:title" content="Scalia — Meta Ads for Local Service Businesses">
+<meta property="og:description" content="Scalia runs Facebook & Instagram ads that fill your calendar with qualified leads. Built for detailers, roofers, HVAC techs, landscapers & more.">
+<meta property="og:url" content="https://scaliagrowth.com/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Scalia — Meta Ads for Local Service Businesses">
+<meta name="twitter:description" content="Scalia runs Facebook & Instagram ads that fill your calendar with qualified leads. Built for detailers, roofers, HVAC techs, landscapers & more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(0.99 0.002 260);
+  --foreground: oklch(0.15 0.02 260);
+  --card: oklch(1 0 0);
+  --muted: oklch(0.96 0.008 260);
+  --muted-fg: oklch(0.42 0.03 260);
+  --border: oklch(0.92 0.01 260);
+  --primary-fg: #ffffff;
+  --brand-blue: #4facfe;
+  --brand-purple: #a855f7;
+  --gradient: linear-gradient(135deg, #4facfe 0%, #a855f7 100%);
+  --gradient-hover: linear-gradient(135deg, #3d9bf0 0%, #9333ea 100%);
+  --glow: 0 0 40px rgba(79,172,254,0.18), 0 0 80px rgba(168,85,247,0.12);
+  --shadow-card: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03);
+  --shadow-card-hover: 0 4px 16px rgba(0,0,0,0.08), 0 8px 32px rgba(0,0,0,0.04);
+  --font: 'Inter', ui-sans-serif, system-ui, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: var(--font); background: var(--background); color: var(--foreground); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+
+.gradient-text {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.gradient-bg { background: var(--gradient); }
+
+/* ── NAVBAR ── */
+header {
+  position: fixed; top: 16px; left: 50%; transform: translateX(-50%);
+  z-index: 100; width: min(95%, 1000px);
+  animation: slideDown 0.5s ease both;
+}
+@keyframes slideDown { from { opacity:0; transform: translateX(-50%) translateY(-20px); } to { opacity:1; transform: translateX(-50%) translateY(0); } }
+
+nav {
+  display: flex; align-items: center; justify-content: space-between;
+  border-radius: 9999px; border: 1px solid rgba(0,0,0,0.08);
+  background: rgba(255,255,255,0.82); backdrop-filter: blur(20px);
+  padding: 10px 20px; box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+.nav-brand { font-size: 20px; font-weight: 800; letter-spacing: -0.02em; text-decoration: none; }
+.nav-links { display: flex; align-items: center; gap: 24px; list-style: none; }
+.nav-links a { font-size: 14px; font-weight: 500; color: var(--muted-fg); text-decoration: none; transition: color 0.2s; }
+.nav-links a:hover { color: var(--foreground); }
+.btn-gradient {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--gradient); color: white; text-decoration: none;
+  padding: 8px 18px; border-radius: 9999px;
+  font-size: 14px; font-weight: 600; border: none; cursor: pointer;
+  box-shadow: var(--glow); transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+  font-family: var(--font);
+}
+.btn-gradient:hover { transform: scale(1.05); box-shadow: 0 0 60px rgba(79,172,254,0.28), 0 0 120px rgba(168,85,247,0.18); }
+.btn-gradient.xl { padding: 14px 40px; font-size: 16px; }
+
+/* Mobile nav toggle */
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; color: var(--foreground); }
+.mobile-menu {
+  display: none; flex-direction: column; gap: 12px;
+  margin-top: 8px; border-radius: 20px;
+  border: 1px solid rgba(0,0,0,0.08);
+  background: rgba(255,255,255,0.96); backdrop-filter: blur(20px);
+  padding: 20px; box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a { font-size: 14px; font-weight: 500; color: var(--muted-fg); text-decoration: none; }
+
+@media (max-width: 700px) {
+  .nav-links, nav .btn-gradient { display: none; }
+  .nav-toggle { display: block; }
+}
+
+/* ── HERO ── */
+.hero {
+  position: relative; min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center; padding: 120px 24px 80px;
+  overflow: hidden;
+}
+.hero-orb-l {
+  position: absolute; top: 25%; left: -8%;
+  width: 384px; height: 384px; border-radius: 50%;
+  background: rgba(79,172,254,0.10); filter: blur(120px);
+  pointer-events: none;
+}
+.hero-orb-r {
+  position: absolute; right: -8%; bottom: 25%;
+  width: 384px; height: 384px; border-radius: 50%;
+  background: rgba(168,85,247,0.10); filter: blur(120px);
+  pointer-events: none;
+}
+.hero-inner { position: relative; z-index: 1; max-width: 860px; margin: 0 auto; }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 1px solid var(--border); background: var(--card);
+  border-radius: 9999px; padding: 6px 16px;
+  font-size: 14px; font-weight: 500; color: var(--muted-fg);
+  box-shadow: var(--shadow-card); margin-bottom: 24px;
+  animation: fadeUp 0.7s 0.05s ease both;
+}
+.hero-badge-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gradient); flex-shrink: 0; }
+.hero h1 {
+  font-size: clamp(36px, 6.5vw, 68px); font-weight: 900;
+  line-height: 1.08; letter-spacing: -0.03em; margin-bottom: 24px;
+  animation: fadeUp 0.7s 0.15s ease both;
+}
+.hero-desc {
+  font-size: clamp(16px, 2vw, 20px); color: var(--muted-fg);
+  max-width: 580px; margin: 0 auto 12px; line-height: 1.65;
+  animation: fadeUp 0.7s 0.25s ease both;
+}
+.hero-sub {
+  font-size: 16px; font-weight: 500; color: rgba(21,21,30,0.7);
+  margin-bottom: 40px;
+  animation: fadeUp 0.7s 0.3s ease both;
+}
+.hero-cta { animation: fadeUp 0.7s 0.38s ease both; display: inline-block; }
+
+/* ── SOCIAL PROOF / NICHES ── */
+.niches {
+  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  background: var(--card); padding: 40px 24px;
+}
+.niches-inner { max-width: 1000px; margin: 0 auto; }
+.niches-label {
+  text-align: center; font-size: 12px; font-weight: 700;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--muted-fg); margin-bottom: 24px;
+}
+.niches-list { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 32px; }
+.niche { display: flex; align-items: center; gap: 8px; color: var(--muted-fg); }
+.niche svg { width: 20px; height: 20px; }
+.niche span { font-size: 14px; font-weight: 500; }
+
+/* ── SECTIONS ── */
+.section { padding: 96px 24px; }
+.section.bg-muted { background: oklch(0.965 0.006 260); }
+.section-inner { max-width: 1000px; margin: 0 auto; }
+.section-head { text-align: center; margin-bottom: 64px; }
+.section-head h2 { font-size: clamp(28px, 4vw, 40px); font-weight: 800; letter-spacing: -0.025em; margin-bottom: 16px; }
+.section-head p { color: var(--muted-fg); font-size: 16px; }
+
+/* Cards */
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.grid-2x3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+
+@media (max-width: 900px) { .grid-3, .grid-2x3 { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px) { .grid-3, .grid-2, .grid-2x3 { grid-template-columns: 1fr; } }
+
+.card {
+  border: 1px solid var(--border); background: var(--card);
+  border-radius: 20px; padding: 32px;
+  box-shadow: var(--shadow-card);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.card-muted { background: var(--muted); }
+.card:hover { box-shadow: var(--shadow-card-hover); transform: translateY(-2px); }
+.card-icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px; border-radius: 12px;
+  background: var(--gradient); margin-bottom: 18px;
+  flex-shrink: 0;
+}
+.card-icon.lg { width: 56px; height: 56px; border-radius: 14px; margin-bottom: 22px; }
+.card-icon svg { width: 20px; height: 20px; color: white; }
+.card-icon.lg svg { width: 26px; height: 26px; }
+.card-step { font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted-fg); margin-bottom: 8px; }
+.card h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.01em; }
+.card h3.lg { font-size: 22px; }
+.card p { font-size: 14px; color: var(--muted-fg); line-height: 1.65; }
+.steps-note { text-align: center; margin-top: 48px; font-size: 15px; font-weight: 500; color: var(--muted-fg); }
+
+/* ── CTA ── */
+.cta-section {
+  position: relative; overflow: hidden;
+  padding: 96px 24px; text-align: center;
+}
+.cta-glow {
+  position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: 600px; height: 320px; border-radius: 50%;
+  background: rgba(79,172,254,0.07); filter: blur(100px);
+  pointer-events: none;
+}
+.cta-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+.cta-inner h2 { font-size: clamp(28px, 5vw, 48px); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 20px; }
+.cta-inner p { font-size: 18px; color: var(--muted-fg); max-width: 480px; margin: 0 auto 40px; line-height: 1.6; }
+
+/* ── FOOTER ── */
+footer {
+  border-top: 1px solid var(--border);
+  background: var(--card); padding: 40px 24px;
+}
+.footer-inner {
+  max-width: 1000px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 20px;
+}
+.footer-brand { font-size: 18px; font-weight: 800; letter-spacing: -0.02em; text-decoration: none; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 20px; list-style: none; }
+.footer-links a { font-size: 14px; color: var(--muted-fg); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--foreground); }
+.footer-right { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
+.footer-legal { display: flex; gap: 16px; }
+.footer-legal a { font-size: 12px; color: var(--muted-fg); text-decoration: none; cursor: pointer; transition: color 0.2s; }
+.footer-legal a:hover { color: var(--foreground); }
+.footer-copy { font-size: 12px; color: var(--muted-fg); }
+
+@media (max-width: 700px) {
+  .footer-inner { flex-direction: column; align-items: center; text-align: center; }
+  .footer-right { align-items: center; }
+  .footer-legal { justify-content: center; }
+}
+
+/* ── LEGAL PAGES ── */
+.legal-wrap { max-width: 720px; margin: 0 auto; padding: 100px 24px 80px; }
+.back-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 14px; color: var(--muted-fg); text-decoration: none;
+  margin-bottom: 32px; cursor: pointer; transition: color 0.2s;
+  background: none; border: none; font-family: var(--font);
+}
+.back-link:hover { color: var(--foreground); }
+.legal-wrap h1 { font-size: 36px; font-weight: 800; letter-spacing: -0.025em; margin-bottom: 8px; }
+.legal-wrap .updated { font-size: 14px; color: var(--muted-fg); margin-bottom: 40px; }
+.legal-body { display: flex; flex-direction: column; gap: 32px; }
+.legal-body section h2 { font-size: 16px; font-weight: 700; color: var(--foreground); margin-bottom: 10px; }
+.legal-body section p, .legal-body section li { font-size: 14px; color: var(--muted-fg); line-height: 1.75; }
+.legal-body section ul { padding-left: 20px; margin-top: 8px; display: flex; flex-direction: column; gap: 4px; }
+.legal-body a { color: var(--foreground); text-decoration: underline; }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp { from { opacity:0; transform: translateY(28px); } to { opacity:1; transform: translateY(0); } }
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
+.reveal.in { opacity: 1; transform: none; }
+.reveal-d1 { transition-delay: 0.1s; }
+.reveal-d2 { transition-delay: 0.2s; }
+.reveal-d3 { transition-delay: 0.3s; }
+.reveal-d4 { transition-delay: 0.4s; }
+.reveal-d5 { transition-delay: 0.5s; }
+
+
+/* ── A11Y: skip-to-content ── */
+.skip-link {
+  position: absolute; left: -9999px; top: 12px;
+  background: var(--foreground); color: #fff;
+  padding: 10px 16px; border-radius: 8px;
+  font-size: 14px; font-weight: 600; z-index: 1000;
+  text-decoration: none;
+}
+.skip-link:focus { left: 12px; }
+
+/* ── STICKY MOBILE CTA (index only) ── */
+.mobile-cta-bar {
+  position: fixed; left: 0; right: 0; bottom: 0;
+  z-index: 90; padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+  background: rgba(255,255,255,0.96); backdrop-filter: blur(20px);
+  border-top: 1px solid var(--border);
+  display: none;
+  transform: translateY(100%); transition: transform 0.3s ease;
+}
+.mobile-cta-bar.show { transform: translateY(0); }
+.mobile-cta-bar .btn-gradient { width: 100%; justify-content: center; padding: 12px 18px; }
+@media (max-width: 700px) {
+  .mobile-cta-bar { display: block; }
+  footer { padding-bottom: 96px; }
+}
+
+/* ── REDUCED MOTION ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal { opacity: 1 !important; transform: none !important; }
+}
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+<header>
+  <nav>
+    <a class="nav-brand" href="/" style="display:flex;align-items:center;gap:8px;text-decoration:none;">
+      <img src="/logo.png" alt="Scalia" width="28" height="28" style="width:28px;height:28px;object-fit:contain;">
+      <span class="gradient-text" style="font-size:20px;font-weight:800;letter-spacing:-0.02em;">Scalia</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+    <a class="btn-gradient" href="https://calendly.com/scaliagrowth/marketing-call" target="_blank" rel="noopener noreferrer">Start Free Trial</a>
+    <button class="nav-toggle" onclick="toggleMobile()" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <svg id="icon-menu" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <svg id="icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#how-it-works" onclick="toggleMobile()">How It Works</a>
+    <a href="#services" onclick="toggleMobile()">Services</a>
+    <a href="#about" onclick="toggleMobile()">About</a>
+    <a class="btn-gradient" href="https://calendly.com/scaliagrowth/marketing-call" target="_blank" rel="noopener noreferrer" style="text-align:center">Start Free Trial</a>
+  </div>
+</header>
+<main>
+
+  <!-- HERO -->
+  <section class="hero" id="main">
+    <div class="hero-orb-l"></div>
+    <div class="hero-orb-r"></div>
+    <div class="hero-inner">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        Meta Ads for Local Service Businesses
+      </div>
+      <h1>We Fill Your Calendar<br>With <span class="gradient-text">Qualified Leads</span></h1>
+      <p class="hero-desc">Stop waiting for the phone to ring. We run Facebook & Instagram ads that bring real, local customers to your door. Whether you're a detailer, roofer, HVAC tech, or landscaper.</p>
+      <p class="hero-sub">Try it free for 7 days. No commitment, no contracts.</p>
+      <div class="hero-cta">
+        <a class="btn-gradient xl" href="https://calendly.com/scaliagrowth/marketing-call" target="_blank" rel="noopener noreferrer">
+          Start Your Free 7-Day Trial
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- NICHES -->
+  <div class="niches">
+    <div class="niches-inner">
+      <p class="niches-label">Niches We Serve</p>
+      <div class="niches-list">
+        <div class="niche reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v3"/><rect x="9" y="11" width="14" height="10" rx="2"/><circle cx="12" cy="21" r="1"/><circle cx="20" cy="21" r="1"/></svg>
+          <span>Auto Detailing</span>
+        </div>
+        <div class="niche reveal reveal-d1">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span>Roofing</span>
+        </div>
+        <div class="niche reveal reveal-d2">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/></svg>
+          <span>HVAC</span>
+        </div>
+        <div class="niche reveal reveal-d3">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8C8 10 5.9 16.17 3.82 19.34"/><path d="M12 9.25V3"/><path d="M7 9.25C7 8 7.5 7 8 6c-1 1-1.5 2-1.5 3.25"/><path d="M3.82 19.34A7 7 0 0 0 17 21"/><path d="M17 8c0 4.42-1.34 7-5 9"/></svg>
+          <span>Landscaping</span>
+        </div>
+        <div class="niche reveal reveal-d4">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 7.9 7 7c-.29.9-1.29 1.27-1.29 2.06C5.71 11.4 4.8 12.5 4.8 13.8c0 1.37 1.07 2.5 2.2 2.5z"/><path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"/></svg>
+          <span>Pressure Washing</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <section class="section" id="how-it-works">
+    <div class="section-inner">
+      <div class="section-head reveal">
+        <h2>How It <span class="gradient-text">Works</span></h2>
+        <p>Three simple steps to a full calendar.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card reveal">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>
+          </div>
+          <div class="card-step">Step 01</div>
+          <h3>We Set Up Your Ads</h3>
+          <p>We build high-converting Meta ad campaigns tailored to your business and service area.</p>
+        </div>
+        <div class="card reveal reveal-d1">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="card-step">Step 02</div>
+          <h3>Leads Come In</h3>
+          <p>Qualified leads start rolling in through Facebook & Instagram. People who actually need your services.</p>
+        </div>
+        <div class="card reveal reveal-d2">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M9 16l2 2 4-4"/></svg>
+          </div>
+          <div class="card-step">Step 03</div>
+          <h3>You Close the Jobs</h3>
+          <p>You focus on what you do best: showing up and getting the work done. We handle the rest.</p>
+        </div>
+      </div>
+      <p class="steps-note reveal">Start with a free 7-day trial. If you don't love it, you pay nothing.</p>
+    </div>
+  </section>
+
+  <!-- WHY SCALIA -->
+  <section class="section bg-muted" id="about">
+    <div class="section-inner">
+      <div class="section-head reveal">
+        <h2>Why <span class="gradient-text">Scalia</span></h2>
+        <p>We're not a generic agency. We specialize in one thing: getting local service businesses more customers.</p>
+      </div>
+      <div class="grid-2">
+        <div class="card reveal">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <h3>Done-For-You Ads</h3>
+          <p>We handle everything: creative, targeting, optimization. You don't lift a finger.</p>
+        </div>
+        <div class="card reveal reveal-d1">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h3>Targeted to Your Area</h3>
+          <p>We reach homeowners and customers in your exact service area. No wasted spend.</p>
+        </div>
+        <div class="card reveal reveal-d2">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <h3>No Long Contracts</h3>
+          <p>Month-to-month. We earn your business every single month with real results.</p>
+        </div>
+        <div class="card reveal reveal-d3">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          </div>
+          <h3>Real Results</h3>
+          <p>We track every lead. You'll always know exactly what your ads are doing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section" id="services">
+    <div class="section-inner">
+      <div class="section-head reveal">
+        <h2>Our <span class="gradient-text">Services</span></h2>
+        <p>Everything you need to grow your local service business.</p>
+      </div>
+      <div class="grid-2">
+        <div class="card reveal">
+          <div class="card-icon lg">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
+          <h3 class="lg">Ads Management</h3>
+          <p>We handle your Meta ads from start to finish: strategy, creative, targeting, and optimization. Consistent leads, every month.</p>
+        </div>
+        <div class="card reveal reveal-d1">
+          <div class="card-icon lg">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <h3 class="lg">Website</h3>
+          <p>A clean, fast, mobile-friendly website built specifically for your business. Designed to convert visitors into customers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT YOU SHOULD KNOW -->
+  <section class="section bg-muted">
+    <div class="section-inner">
+      <div class="section-head reveal">
+        <h2>What You Should <span class="gradient-text">Know</span></h2>
+        <p>Straightforward answers so you know exactly what to expect.</p>
+      </div>
+      <div class="grid-2x3">
+        <div class="card reveal">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h3>You Only Pay for Ad Spend</h3>
+          <p>Our retainer covers everything we do. Your ad budget goes directly to Facebook and Instagram, not to us.</p>
+        </div>
+        <div class="card reveal reveal-d1">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M9.5 14l1.5 1.5L15 11"/></svg>
+          </div>
+          <h3>No Long-Term Contracts</h3>
+          <p>Month to month. Cancel anytime. We earn your business with results, not lock-ins.</p>
+        </div>
+        <div class="card reveal reveal-d2">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
+          </div>
+          <h3>7-Day Free Trial</h3>
+          <p>We run your ads for 7 days at no charge. You only pay the ad spend during the trial.</p>
+        </div>
+        <div class="card reveal reveal-d3">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 1.41 13.18M4.93 4.93a10 10 0 0 0 0 14.14"/><path d="M2 12h2M20 12h2M12 2v2M12 20v2"/></svg>
+          </div>
+          <h3>We Handle Everything</h3>
+          <p>Ad creative, targeting, copy, optimization. You focus on showing up and closing the jobs.</p>
+        </div>
+        <div class="card reveal reveal-d4">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          </div>
+          <h3>Minimum Ad Spend Recommended</h3>
+          <p>We recommend at least $20 to $50 a day in ad spend to see real results. More budget means more leads.</p>
+        </div>
+        <div class="card reveal reveal-d5">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3>Results Take Time</h3>
+          <p>Most clients start seeing leads within the first week. The longer we run, the better the data and the better the results.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-glow"></div>
+    <div class="cta-inner reveal">
+      <h2>Get Your First 7 Days <span class="gradient-text">Free</span></h2>
+      <p>Book a free call and we'll show you exactly how we can fill your calendar with paying customers.</p>
+      <a class="btn-gradient xl" href="https://calendly.com/scaliagrowth/marketing-call" target="_blank" rel="noopener noreferrer">
+        Claim Your Free Trial
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+  </section>
+
+</main>
+<footer>
+  <div class="footer-inner">
+    <a class="footer-brand" href="/" style="display:flex;align-items:center;gap:8px;text-decoration:none;">
+      <img src="/logo.png" alt="Scalia" width="24" height="24" style="width:24px;height:24px;object-fit:contain;">
+      <span class="gradient-text">Scalia</span>
+    </a>
+    <ul class="footer-links">
+      <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="https://calendly.com/scaliagrowth/marketing-call" target="_blank" rel="noopener noreferrer">Book a Call</a></li>
+    </ul>
+    <div class="footer-right">
+      <div class="footer-legal">
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms &amp; Conditions</a>
+      </div>
+      <span class="footer-copy">&copy; 2026 Scalia</span>
+    </div>
+  </div>
+</footer>
+<div class="mobile-cta-bar" id="mobile-cta-bar"><a class="btn-gradient" href="https://calendly.com/scaliagrowth/marketing-call" target="_blank" rel="noopener noreferrer">Book Your Free Strategy Call</a></div>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Scalia",
+  "url": "https://scaliagrowth.com/",
+  "description": "Meta (Facebook & Instagram) ad management for local service businesses — detailers, roofers, HVAC, landscapers and more.",
+  "email": "scaliagrowth@gmail.com",
+  "areaServed": "United States",
+  "serviceType": ["Meta Ads Management", "Lead Generation", "Website Design"],
+  "priceRange": "$$"
+}
+</script>
+<script>
+  function toggleMobile() {
+    var menu = document.getElementById('mobile-menu');
+    var btn  = document.querySelector('.nav-toggle');
+    var open = menu.classList.toggle('open');
+    document.getElementById('icon-menu').style.display  = open ? 'none' : 'block';
+    document.getElementById('icon-close').style.display = open ? 'block' : 'none';
+    if (btn) btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+</script>
+<script>
+  // Scroll reveal
+  function initReveal() {
+    var els = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) {
+      els.forEach(function(el){ el.classList.add('in'); });
+      return;
+    }
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    els.forEach(function(el){ obs.observe(el); });
+  }
+  // Smooth anchor scroll
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var href = this.getAttribute('href');
+      if (href === '#' || href.length < 2) return;
+      var target = document.querySelector(href);
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+  // Sticky mobile CTA: show after hero leaves viewport
+  var bar = document.getElementById('mobile-cta-bar');
+  var hero = document.querySelector('.hero');
+  if (bar && hero && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ bar.classList.toggle('show', !e.isIntersecting); });
+    }, { threshold: 0 }).observe(hero);
+  }
+  document.addEventListener('DOMContentLoaded', initReveal);
+</script>
+</body>
+</html>
